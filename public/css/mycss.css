@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    overflow-x: hidden;
+}
+
+nav {
+    /* background-color: white; */
+    display: flex;
+    /* color: white; */
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #eceae8f3;
+}
+.logo img {
+    width: 40%;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+}
+nav ul li a button:hover {
+    background-color: rgb(189, 244, 108);
+}
+
+.toggle-menu {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.toggle-menu input {
+    position: absolute;
+    opacity: 0;
+    width: 50px;
+    height: 28px;
+    left: -7px;
+    cursor: pointer;
+    z-index: 3;
+}
+/* animation burger */
+.toggle-menu span:nth-child(2) {
+    transform-origin: 0 0;
+    transition: all 0.5s;
+}
+.toggle-menu input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(-2px, -2px);
+    background-color: rgb(10, 10, 10);
+}
+.toggle-menu span:nth-child(4) {
+    transition: all 0.5s;
+    transform-origin: 0 100%;
+}
+.toggle-menu input:checked ~ span:nth-child(4) {
+    background-color: rgb(10, 10, 10);
+    transform: rotate(-45deg) translate(0px, 0px);
+}
+.toggle-menu input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+.toggle-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: rgb(10, 10, 10);
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+/* ukuran mobile */
+@media screen and (max-width: 576px) {
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100vh;
+        align-items: center;
+        z-index: 2;
+        background-color: light;
+        transform: translateX(100%);
+        transition: all 0.5s;
+        opacity: 0;
+        background-color: rgba(214, 203, 203, 0.5);
+    }
+
+    .toggle-menu {
+        display: flex;
+    }
+    nav ul.slide {
+        transform: translateX(0);
+        transition: all 0.5s;
+        opacity: 1;
+    }
+}
