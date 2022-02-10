@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\SceduleController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Middleware;
@@ -32,4 +33,5 @@ Route::group(['middleware' => 'CheckLogin'], function () {
     Route::get('/historyScedule', [SceduleController::class, 'history']);
     Route::get('/help', [UserController::class, 'help']);
     Route::get('/logOut', [LoginController::class, 'logOut']);
+    Route::post('/contoh', [ExampleController::class, 'store']);
 });

@@ -24,19 +24,38 @@
                               <p>Absensi setiap karyawan hanya bisa di lakukan satu kali setiap / tanggal sekarng </p>
                               
                               <h5 id="list-item-3" class="text-info">Employees</h5>
-                              <p>Menu tersebut di gunakan untuk melihat seluruh karyawan yang sudah registrasi</p>
+                              <p>This menu is used to view all registered employees</p>
                               <h5 id="list-item-4" class="text-info">Attendace
                               </h5>
-                              <p>Menu tersebut di gunakan utuk melihat absensi daris setiap tanggal dari setiap user </p>
+                              <p>The menu is used to view the attendance of each date from each user </p>
                           </div>
                       </div>
 
                   </div>
+                  
+                    <form action="{{'/contoh'}}" method="post">
+                        @csrf
+                      <div class="input-group mb-3">
+                          <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="checkbox" name="barang[]" value="ciki" aria-label="Checkbox for following text input">
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with checkbox">
+                        </div>
+                      <div class="input-group mb-3">
+                          <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="checkbox" name="barang[]" value="roti" aria-label="Checkbox for following text input">
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with checkbox">
+                        </div>
+                  <button type="submit">kirim</button>
+                    </form>
               </div>
           </div>
 
       </div>
   </div>
+
+
  
 </div>
 <script>

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Models\employee;
-use App\Models\user;
-use App\Models\Scedule;
 
-class EmployeesController extends Controller
+class ExampleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,7 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        $data['employees'] = employee::leftjoin('scedules', 'scedules.idEmployees', '=', 'employees.id')
-            ->groupBy('scedules.idEmployees')
-            ->get(['employees.*', 'scedules.*']);
-        return view('employees.index', $data);
+        //
     }
 
     /**
@@ -40,7 +35,14 @@ class EmployeesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $idBarang = $request->barang;
+        $jumlah = count($idBarang);
+        for ($i = 0; $i < $jumlah; $i++) {
+            DB::table('examples')->insert([
+
+                'barang' => $idBarang[$i]
+            ]);
+        }
     }
 
     /**

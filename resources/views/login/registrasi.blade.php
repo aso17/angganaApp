@@ -16,10 +16,10 @@
 
 </head>
 <body class="bg-light">  
-<div class="container">
-    <div class="row ">
+<div class="container bg-dark ">
+    <div class="row  ">
         <div class="col-md-12 ">
-            <div class="card m-1 p-2">
+            <div class="card mt-3">
                 <div class="card-header">
                     <img src="{{asset('/img/logo.png')}}" alt="" width="200px">
                     <h5 class="text-center"><i class="fas fa-indent"></i> Form Registrasi</h5>
